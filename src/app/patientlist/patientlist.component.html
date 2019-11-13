@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Administrator</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="mainadmin">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ---------------------------------------------------------------
+--------------------------------------------------------------- -->
+
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('./assets/images/bg-103.jpg');">
+
+    <div class="container">
+      <div class="row">
+        <div class="search-list">
+          <label>Filter</label>
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+            placeholder="Search by Patient Id, Name, Location">
+        </div>
+        <table class="table table-striped" border="2">
+
+          <th>Patient ID</th>
+          <th>Patient Name</th>
+          <th>Location</th>
+          <th>Blood Group</th>
+          <th>Mobile Number</th>
+          <th>Delete</th>
+
+          <tr *ngFor="let pats of pat | async | filter:searchText">
+            <td>{{pats.patientId}}</td>
+            <td>{{pats.name}}</td>
+            <td>{{pats.location}}</td>
+            <td>{{pats.bloodGroup}}</td>
+            <td>{{pats.phoneNo}}</td>
+            <td><button (click)="deletePatient(pats.patientId)" type="reset" class="login100-form-btn">Delete</button>
+            </td>
+
+
+
+          </tr>
+
+        </table>
+
+        <button class="login100-form-btn"><a routerLink="/mainadmin">Back</a></button>
+        <button class="login100-form-btn"><a routerLink="/patientreg">Add Patient</a></button>
+      </div>
+    </div>
+  </div>

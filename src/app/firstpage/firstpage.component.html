@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="txt2" href="#">Welcome {{user}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="firstpage">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="request">Blood Request <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout">Logout</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<!-- ---------------------------------------------------------------
+--------------------------------------------------------------- -->
+
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('./assets/images/bg-101.jpg');">
+
+    <div class="container">
+      <div class="row">
+        <div class="search-list">
+          <label>Filter</label>
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+            placeholder="Search by Location">
+        </div>
+
+        <table class="table table-striped" border="2">
+
+          <th>Patient ID</th>
+          <th>Patient Name</th>
+          <th>Location</th>
+          <th>Blood Group</th>
+          <th>Mobile Number</th>
+          <th>Preference</th>
+
+          <tr *ngFor="let pats of donarList | filter:searchText">
+            <td>{{pats.patientId}}</td>
+            <td>{{pats.name}}</td>
+            <td>{{pats.location}}</td>
+            <td>{{pats.bloodGroup}}</td>
+            <td>{{pats.phoneNo}}</td>
+            <td><button (click)="donate(pats)" type="submit" class="btn btn-success">Donate</button></td>
+
+          </tr>
+
+        </table>
+
+      </div>
+    </div>

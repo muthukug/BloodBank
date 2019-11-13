@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">User</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="firstpage">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout">Logout</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<!-- ---------------------------------------------------------------
+--------------------------------------------------------------- -->
+
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('./assets/images/bg-101.jpg');">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+      <div>
+        <div style="text-align: center;">
+          <h3><strong>Confirm Your Details </strong></h3>
+        </div>
+        <br>
+        <br>
+        <div>
+          <form action="action_page.php" name="confir" (ngSubmit)="onSubmit(confirm)" #confirm="ngForm">
+            <div align="center">
+              <table class="table table-striped" border="2">
+                <tr class="form-group">
+                  <th>Patient ID</th>
+                  <td class="form-control">{{donars.patientId}}</td>
+                </tr>
+                <tr class="form-group">
+                  <th>Name</th>
+                  <td class="form-control">{{donars.name}}</td>
+                </tr>
+                <tr class="form-group">
+                  <th>Phone No</th>
+                  <td class="form-control">{{donars.phoneNo}}</td>
+                </tr>
+                <tr class="form-group">
+                  <th>Location</th>
+                  <td class="form-control">{{donars.location}}</td>
+                </tr>
+              </table>
+              <br>
+              <br>
+              <div><button type="button" type="submit" [disabled]=!confirm.valid class="btn btn-info">Confirm</button>
+              </div>
+              <br>
+              <br>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
