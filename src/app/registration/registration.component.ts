@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Registration } from '../Model/Registration';
 import { Router } from '@angular/router';
 import { RegisterService } from '../services/register.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -10,14 +11,18 @@ import { RegisterService } from '../services/register.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private router: Router, private regService: RegisterService) { }
+  constructor(private router: Router, private regService: RegisterService,private _formBuilder: FormBuilder) { }
 
 
   password
   confirmpassword
 
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
   ngOnInit() {
+    
   }
 
   registration: Registration = new Registration();

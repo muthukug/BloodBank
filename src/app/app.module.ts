@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularMaterialModule } from './angular-material.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,8 @@ import { DonarManagementComponent } from './donar-management/donar-management.co
 import { AssigndonarComponent } from './assigndonar/assigndonar.component';
 import { RequestComponent } from './request/request.component';
 import { ResetuserComponent } from './resetuser/resetuser.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material';
 
 
 @NgModule({
@@ -45,9 +48,14 @@ import { ResetuserComponent } from './resetuser/resetuser.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule,
+    AngularMaterialModule,
+    MatButtonModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
