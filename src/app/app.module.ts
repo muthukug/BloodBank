@@ -24,6 +24,8 @@ import { RequestComponent } from './request/request.component';
 import { ResetuserComponent } from './resetuser/resetuser.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
+import { FbLikeComponent } from './fb-like/fb-like.component';
+import { TweetComponent } from './tweet/tweet.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { MatButtonModule } from '@angular/material';
     DonarManagementComponent,
     AssigndonarComponent,
     RequestComponent,
-    ResetuserComponent
+    ResetuserComponent,
+    FbLikeComponent,
+    TweetComponent
   ],
   imports: [
     BrowserModule,

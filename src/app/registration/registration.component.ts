@@ -11,15 +11,12 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private router: Router, private regService: RegisterService,private _formBuilder: FormBuilder) { }
+  constructor(private router: Router, private regService: RegisterService) { }
 
 
   password
   confirmpassword
 
-  isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
 
   ngOnInit() {
     

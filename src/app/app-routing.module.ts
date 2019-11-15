@@ -17,6 +17,8 @@ import { DonarManagementComponent } from './donar-management/donar-management.co
 import { AssigndonarComponent } from './assigndonar/assigndonar.component';
 import { RequestComponent } from './request/request.component';
 import { ResetuserComponent } from './resetuser/resetuser.component';
+import { FbLikeComponent } from './fb-like/fb-like.component';
+import { TweetComponent } from './tweet/tweet.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
@@ -34,7 +36,9 @@ const routes: Routes = [
   { path: 'confirmdonar', component: ConfirmDonarComponent, canActivate: [AuthGaurdService] },
   { path: 'donarmanagement', component: DonarManagementComponent, canActivate: [AuthAdmin] },
   { path: 'assigndonar', component: AssigndonarComponent, canActivate: [AuthAdmin] },
-  { path: 'request', component: RequestComponent, canActivate: [AuthGaurdService] }
+  { path: 'request', component: RequestComponent, canActivate: [AuthGaurdService] },
+  { path: 'facebook', component: FbLikeComponent },
+  { path: 'twitter', component: TweetComponent }
 ];
 
 @NgModule({

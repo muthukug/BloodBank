@@ -27,4 +27,14 @@ export class HomepageComponent implements OnInit {
   Admin() {
     this.router.navigate(['/adminlogin']);
   }
+
+  fb()
+  {
+    this.router.navigate(['/facebook'])
+  }
+
+  tweet()
+  {
+    this.router.navigate(['/twitter'])
+  }
 }
