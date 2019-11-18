@@ -1,64 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="txt2" href="#">Welcome {{user}}</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="firstpage">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout">Logout</a>
-      </li>
-
-    </ul>
-
-  </div>
-</nav>
-
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+    <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+    <a class="navbar-brand" href="firstpage">
+        <img src="./assets/images/donor.jpg" alt="">
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="navbar-brand" href="firstpage">Welcome : <br> {{user}} <mat-icon aria-hidden="false" aria-label="Example home icon">face</mat-icon>
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="firstpage"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="request"> Blood Request &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">opacity</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         </ul>
+      </div>
+      <button mat-button [matMenuTriggerFor]="menu">Click here for Logout</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a href="logout">Logout</a></button>
+      </mat-menu>    
+    </nav>
 <!-- ---------------------------------------------------------------
   --------------------------------------------------------------- -->
 
 <div class="limiter">
   <div class="container-login100" style="background-image: url('./assets/images/bg-101.jpg');">
-<!-- 
-    <div class="container">
-      <div class="row">
-        <div class="search-list">
-          <label>Filter</label>
-          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
-            placeholder="Search by Donar Id, Name, Location">
-        </div>
-        <table class="table table-striped" border="2">
-
-          <th>Donar ID</th>
-          <th>Patient ID</th>
-          <th>Patient Name</th>
-          <th>Locaton</th>
-          <th>Mobile Number</th>
-          <th>Donar Name</th>
-          <th>Donar Phone Number</th>
-          <th>Status</th>
-
-          <tr *ngFor="let dons of userName | filter:searchText">
-            <td>{{dons.donarId}}</td>
-            <td>{{dons.pId}}</td>
-            <td>{{dons.pName}}</td>
-            <td>{{dons.plocation}}</td>
-            <td>{{dons.phNo}}</td>
-            <td>{{dons.donarName}}</td>
-            <td>{{dons.donarPhoneNo}}</td>
-            <td><b style="color: blue;"> {{dons.status}}</b>
-              <div [hidden]=" dons.status != 'Requested' || dons.status == 'Accepted'">
-                <button type="reset" class="btn btn-info" name="rad" (click)="accept(dons.donarId,dons.pId)">Accept</button><br>
-                <button type="reset" class="btn btn-info" name="rad" (click)="reject(dons.donarId)">Reject</button>
-              </div>
-            </td>
-          </tr>
-        </table> -->
 
         <div fxLayout fxLayoutAlign="center center">
             <mat-form-field fxFlex="40%">
@@ -134,5 +100,3 @@
 
       </div>
     </div>
-  <!-- </div>
-</div> -->

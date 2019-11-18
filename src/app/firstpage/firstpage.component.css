@@ -8,9 +8,14 @@ table {
   }
 
   .mat-cell, .mat-header-cell {
-    background-color: rgb(115, 196, 95);
+    background-color: burlywood;
 }
-.mat-mini-fab
+.mat-stroked-button
 {
-    background-color: rgb(115, 196, 95);
+    background-color: burlywood;
+}
+
+.mat-paginator
+{
+  background-color: burlywood;
 }

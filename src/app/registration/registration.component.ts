@@ -22,12 +22,14 @@ export class RegistrationComponent implements OnInit {
     
   }
 
+  
+
   registration: Registration = new Registration();
 
   onSubmit(register) {
     this.regService.register(this.registration).subscribe((data: boolean) => {
       if (data) {
-        this.router.navigate(['/homepage'])
+        this.router.navigate(['/login'])
         alert(JSON.stringify("Registeration Sucessful"))
       }
       else {

@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+    <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/donor.jpg" alt="">
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="openpage"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="about"> About Us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">people</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="facts"> Facts About Blood Donation &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">menu_book</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+              <a class="nav-link" href="faq"> FAQ &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">question_answer</mat-icon></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a class="nav-link" href="contact"> Contact us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">call</mat-icon></a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item active">
+                  <a class="nav-link" href="facebook"> Share &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">share</mat-icon></a>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+            </ul>
+      </div>
+      <button mat-button [matMenuTriggerFor]="menu">Click here for Login</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a href="login">Login</a></button>
+        <button mat-menu-item><a href="adminlogin">Admin</a></button>
+      </mat-menu>    
+    </nav>
+  
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('./assets/images/bg-00.jpg');">
+
+      <mat-card class="example-card">
+          <iframe width="1000" height="315" align="middle" src="./assets/images/about-002.jpg" frameborder="0" allowfullscreen></iframe><p>
+     <br><br>
+     <h4 style="font-family: Georgia, 'Times New Roman', Times, serif;">About Us</h4><br>
+       <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: larger; align-self: center;">
+      'Blood Bank India' is the first product resulted out of the community welfare initiative called 'People Project' from uSiS Technologies. Universally, 'Blood' is recognized as the most precious element that sustains life. It saves innumerable lives across the world in a variety of conditions. Once in every 2- seconds, someone, somewhere is desperately in need of blood. More than 29 million units of blood components are transfused every year. The need for blood is great - on any given day, approximately 39,000 units of Red Blood Cells are needed. Each year, we could meet only up to 1% (approx) of our nation’s demand for blood transfusion.
+
+Despite the increase in the number of donors, blood remains in short supply during emergencies, mainly attributed to the lack of information and accessibility. We positively believe this tool can overcome most of these challenges by effectively connecting the blood donors with the blood recipients.
+      </p>   
+    </mat-card>  
+    </div>
+</div>

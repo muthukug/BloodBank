@@ -1,73 +1,155 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+    <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/donor.jpg" alt="">
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="openpage"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="about"> About Us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">people</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="facts"> Facts About Blood Donation &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">menu_book</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+              <a class="nav-link" href="faq"> FAQ &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">question_answer</mat-icon></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a class="nav-link" href="contact"> Contact us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">call</mat-icon></a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </ul>
+      </div>
+      <button mat-button [matMenuTriggerFor]="menu">Click here for Login</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a href="login">Login</a></button>
+        <button mat-menu-item><a href="adminlogin">Admin</a></button>
+      </mat-menu>    
+    </nav>
+
 <div class="limiter">
   <div class="container-login100" style="background-image: url('./assets/images/bg-101.jpg');">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+      <mat-label style="font-family: 'Times New Roman', Times, serif;text-align: center;font-size: x-large;">Registration</mat-label>
+      <form class="example-form" (ngSubmit)="onSubmit(register)" #register="ngForm" >
+        <mat-vertical-stepper #linearVerticalStepper="matVerticalStepper" [linear]="false">
+          <mat-step >
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field class="example-full-width">
+              <input matInput type="text" placeholder="Type your Name" id="Name" name="Name" #name="ngModel"
+              [(ngModel)]="registration.name" required pattern="[a-zA-Z]{3,}">
+              <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is Required :: Only Alphabates
+                  Allowed</div> 
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+              </div>
+          </mat-step>
 
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Location</ng-template>
+                    <mat-form-field>
+                     <mat-select required #location="ngModel" id="location" [value]="loc" name="location" [(ngModel)]="registration.location" placeholder="Please Choose The Location">
+                    <mat-option value="Marathahalli">Marathahalli</mat-option>
+                    <mat-option value="ElectronicCity">Electronic City</mat-option>
+                    <mat-option value="BigBazzar">BigBazzar</mat-option>
+                    </mat-select> 
+                    </mat-form-field>
+            <div>
+                <button mat-button matStepperNext type="button" >Next</button>
+                <button mat-button matStepperPrevious type="button">Back</button>
+          </div>
+          </mat-step>
+      
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Blood Group</ng-template>
+            <mat-form-field>
+              <mat-select required placeholder="Select your Blood Group" id="bloodGroup" name="bloodGroup"
+              #bloodGroup="ngModel" [(ngModel)]="registration.bloodGroup">
+             <mat-option value="O+ve">O+ve</mat-option>
+             <mat-option value="B+ve">B+ve</mat-option>
+             <mat-option value="AB+ve">AB+ve</mat-option>
+             <mat-option value="B-ve">B-ve</mat-option>
+             <mat-option value="O-ve">O-ve</mat-option>
+             </mat-select> 
+             </mat-form-field>
 
-      <form class="example-form" (ngSubmit)="onSubmit(register)" #register="ngForm">
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
+          </div>
+          </mat-step>
 
-        <label>Enter Your Name : </label><br>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Favorite food" type="text" placeholder="Type your Name" id="Name" name="Name" #name="ngModel"
-          [(ngModel)]="registration.name" required pattern="[a-zA-Z]{3,}">
-          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is Required :: Only Alphabates
-              Allowed</div>
-        </mat-form-field><br>
-
-        <label>Enter Your Location : </label><br>
-        <mat-form-field class="example-full-width">
-          <input matInput type="text" placeholder="Type your Location" id="location" name="location"
-          #location="ngModel" [(ngModel)]="registration.location" required pattern="[a-zA-Z ]{3,}">
-          <div [hidden]="location.valid || location.pristine" class="alert alert-danger">Location is Required :: Only
-              Alphabates Allowed </div>
-        </mat-form-field><br>
-
-        <label>Enter Your Blood Group : </label><br>
-        <mat-form-field class="example-full-width">
-          <input matInput type="text" placeholder="Type your Blood Group" id="bloodGroup" name="bloodGroup"
-          #bloodGroup="ngModel" [(ngModel)]="registration.bloodGroup" required pattern="[a-zA-Z0-9._%+-]{1,}">
-          <div [hidden]="bloodGroup.valid || bloodGroup.pristine" class="alert alert-danger">Blood Group is Required ::
-              Format - O+ve </div>
-        </mat-form-field><br>
-
-        <label>Enter Your Phone Number : </label><br>
-        <mat-form-field class="example-full-width">
-          <input matInput  type="text" placeholder="Type your Mobile Number" id="phoneNo" name="phoneNo"
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Mobile Number</ng-template>
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Type your Mobile Number" id="phoneNo" name="phoneNo"
           #phoneNo="ngModel" [(ngModel)]="registration.phoneNo" required pattern="[6789][0-9]{9}">
           <div [hidden]="phoneNo.valid || phoneNo.pristine" class="alert alert-danger">Enter Valid Mobile Number</div>
-        </mat-form-field><br>
 
-        <label>Enter Your Email : </label><br>
-        <mat-form-field class="example-full-width">
-          <input matInput type="email"  placeholder="Type your Email" id="email" name="email" #email="ngModel"
-          [(ngModel)]="registration.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-          <div [hidden]="email.valid || email.pristine" class="alert alert-danger">LEmail Format (Eg: abc@xyz.com)</div>
-        </mat-form-field><br>
+            </mat-form-field>
+            
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
+          </div>
+          </mat-step>
 
-        <label>Enter Your Password : </label><br>
-        <mat-form-field class="example-full-width">
-          <input matInput type="password" placeholder="Type your Password" id="password" name="password"
-          #password="ngModel" [(ngModel)]="registration.password" required
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-          <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Must contain at least one
-              number
-              and one uppercase and lowercase letter, and at least 8 or more characters </div>
-        </mat-form-field><br>
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Email</ng-template>
+            <mat-form-field>
+              <input matInput type="email"  placeholder="Type your Email" id="email" name="email" #email="ngModel"
+              [(ngModel)]="registration.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+              <div [hidden]="email.valid || email.pristine" class="alert alert-danger">LEmail Format (Eg: abc@xyz.com)</div>
+        </mat-form-field>
+            
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
+          </div>
+          </mat-step>
 
-        <label>Conform Your Password : </label><br>
-        <mat-form-field class="example-full-width">
-          <input matInput  type="password"  placeholder="Retype your Password" id="cpassword" name="cpassword"
-          #cpassword="ngModel" [(ngModel)]="registration.cpassword" required pattern="{{registration.password}}">
-          <div [hidden]="cpassword.valid || cpassword.pristine" class="alert alert-danger">Passwords does not match</div>
-        </mat-form-field><br>
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Password</ng-template>
+
+            <mat-form-field>
+              <input matInput type="password" placeholder="Type your Password" id="password" name="password"
+              #password="ngModel" [(ngModel)]="registration.password" required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+              <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Must contain at least one
+                  number
+                  and one uppercase and lowercase letter, and at least 8 or more characters </div>
+                 </mat-form-field>
+
+            
+            <mat-form-field>
+              <input matInput  type="password"  placeholder="Retype your Password" id="cpassword" name="cpassword"
+              #cpassword="ngModel" [(ngModel)]="registration.cpassword" required pattern="{{registration.password}}">
+              <div [hidden]="cpassword.valid || cpassword.pristine" class="alert alert-danger">Passwords does not match</div>
+              </mat-form-field>
+            
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
+          </div>
+          </mat-step>
+         
+         
       
-        <button type="submit" [disabled]=!register.valid>
-            Register
-          </button>
-
-      </form> 
+          <mat-step>
+            <ng-template matStepLabel>Confirm your information</ng-template>
+            Everything seems correct.
+            <div>
+              <button mat-button type="submit" [disabled]=!register.valid>Done</button>
+            </div>
+          </mat-step> 
+        </mat-vertical-stepper>
+      </form>
+      <br>
+      <button mat-stroked-button><a href="login">Back</a></button>
 
     </div>
-      
-      
   </div>
 </div>

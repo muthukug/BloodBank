@@ -1,27 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Administrator</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="mainadmin">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout">Logout</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+    <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+    <a class="navbar-brand" href="mainadmin">
+        <img src="./assets/images/donor.jpg" alt="">
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="mainadmin"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="patientlist"> Patient Lists &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">add_circle_outline</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="donarmanagement"> Donor Management &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">find_in_page</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </ul>
+      </div>
+      <button mat-button [matMenuTriggerFor]="menu">Click here for Logout</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a href="logout">Logout</a></button>
+      </mat-menu>    
+    </nav>
 
 <!-- ---------------------------------------------------------------
 --------------------------------------------------------------- -->
 
 <div class="limiter">
-  <div class="container-login100" style="background-image: url('./assets/images/bg-103.jpg');">
+  <div class="container-login100" style="background-image: url('./assets/images/bg-101.jpg');">
 
     <div fxLayout fxLayoutAlign="center center">
         <mat-form-field fxFlex="40%">

@@ -8,4 +8,5 @@ export class Registration {
     bloodGroup: String
     namedetail: String
     namedetails: String
+    reg:String;
 }

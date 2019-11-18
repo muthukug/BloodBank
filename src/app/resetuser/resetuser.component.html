@@ -1,49 +1,96 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+    <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/donor.jpg" alt="">
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="openpage"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="about"> About Us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">people</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="facts"> Facts About Blood Donation &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">menu_book</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+              <a class="nav-link" href="faq"> FAQ &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">question_answer</mat-icon></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a class="nav-link" href="contact"> Contact us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">call</mat-icon></a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </ul>
+      </div>
+      <button mat-button [matMenuTriggerFor]="menu">Click here for Login</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a href="login">Login</a></button>
+        <button mat-menu-item><a href="adminlogin">Admin</a></button>
+      </mat-menu>    
+    </nav>
+
 <div class="limiter">
   <div class="container-login100" style="background-image: url('./assets/images/bg-101.jpg');">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-      <form class="login100-form validate-form" (ngSubmit)="updateUserPassword(login)" #login="ngForm">
+        <h4 style="font-family: Georgia, 'Times New Roman', Times, serif;" align="center">Change Password</h4>
+        <br>
+      <mat-label style="font-family: 'Times New Roman', Times, serif;text-align: center;font-size: x-large;">Fill the Details</mat-label>
+      <form class="example-form" (ngSubmit)="updateUserPassword(login)" #login="ngForm" >
+        <mat-vertical-stepper #linearVerticalStepper="matVerticalStepper" [linear]="false">
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Mobile Number</ng-template>
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Type your Mobile Number" id="phoneNo" name="phoneNo"
+          #phoneNo="ngModel" [(ngModel)]="registration.phoneNo" required pattern="[6789][0-9]{9}">
+          <div [hidden]="phoneNo.valid || phoneNo.pristine" class="alert alert-danger">Enter Valid Mobile Number</div>
 
-        <span class="login100-form-title p-b-49">
-          Fill The Details
-        </span>
-
-        <div class="wrap-input100 validate-input m-b-23" data-validate="phoneNo is required">
-          <span class="label-input100">Mobile Number</span>
-          <input type="text" class="input100" placeholder="Type your Mobile Number" id="phoneNo" name="phoneNo"
-            #phoneNo="ngModel" [(ngModel)]="registration.phoneNo" required pattern="[6789][0-9]{9}">
-          <span class="focus-input100" data-symbol="&#xf206;"></span>
-          <div [hidden]="phoneNo.valid || phoneNo.pristine" class="alert alert-danger">Enter Valid Mobile Number </div>
-        </div>
-
-        <div class="wrap-input100 validate-input m-b-23" data-validate="Password is required">
-          <span class="label-input100"> New Password</span>
-          <input type="password" class="input100" placeholder="Type your Password" id="password" name="password"
-            #password="ngModel" [(ngModel)]="registration.password" required
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-          <span class="focus-input100" data-symbol="&#xf206;"></span>
-          <div [hidden]="password.valid || password.pristine" class="alert alert-danger"> Must contain at least one
-            number
-            and one uppercase and lowercase letter, and at least 8 or more characters</div>
-        </div>
-
-        <div class="wrap-input100 validate-input m-b-23" data-validate="Conform password is required">
-          <span class="label-input100">Conform Password</span>
-          <input type="password" class="input100" placeholder="Retype your Password" id="cpassword" name="cpassword"
-            #cpassword="ngModel" [(ngModel)]="registration.cpassword" required pattern="{{registration.password}}">
-          <span class="focus-input100" data-symbol="&#xf206;"></span>
-          <div [hidden]="cpassword.valid || cpassword.pristine" class="alert alert-danger">Passwords do not match</div>
-        </div>
-
-        <div class="container-login100-form-btn">
-          <div class="wrap-login100-form-btn">
-            <div class="login100-form-bgbtn"></div>
-            <button type="submit" [disabled]=!login.valid class="login100-form-btn">
-              Change Password
-            </button>
+            </mat-form-field>
+            
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
           </div>
-        </div>
+          </mat-step>
 
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Password</ng-template>
+
+            <mat-form-field>
+              <input matInput type="password" placeholder="Type your Password" id="password" name="password"
+              #password="ngModel" [(ngModel)]="registration.password" required
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+              <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Must contain at least one
+                  number
+                  and one uppercase and lowercase letter, and at least 8 or more characters </div>
+                 </mat-form-field>
+
+            
+            <mat-form-field>
+              <input matInput  type="password"  placeholder="Retype your Password" id="cpassword" name="cpassword"
+              #cpassword="ngModel" [(ngModel)]="registration.cpassword" required pattern="{{registration.password}}">
+              <div [hidden]="cpassword.valid || cpassword.pristine" class="alert alert-danger">Passwords does not match</div>
+              </mat-form-field>
+            
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
+          </div>
+          </mat-step>
+         
+         
+      
+          <mat-step>
+            <ng-template matStepLabel>Confirm your information</ng-template>
+            Everything seems correct.
+            <div>
+              <button mat-button type="submit" [disabled]=!login.valid>Done</button>
+            </div>
+          </mat-step> 
+        </mat-vertical-stepper>
       </form>
+      <br>
+      <button mat-stroked-button><a href="login">Back</a></button>
+
     </div>
   </div>
 </div>

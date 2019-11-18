@@ -20,6 +20,7 @@ export class FirstpageComponent implements OnInit {
   ngOnInit() {
     this.getPatient()
     this.regService.getName().subscribe(data=>this.user=data);
+    
   }
 
   doFilter = (value: string) => {

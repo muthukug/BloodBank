@@ -21,6 +21,8 @@ export class RegisterService {
   donardetails: DoanrDetails
   uName: String;
   useName: String;
+  usName:String
+  names:String;
 
   constructor(private http: HttpClient) { }
 
@@ -139,5 +141,7 @@ export class RegisterService {
   updateUserPassword(phoneNo, password): Observable<any> {
     return this.http.get(`${this.baseUrl}` + `/updateUserPassword/${phoneNo}/${password}`);
   }
+
+
 
 }

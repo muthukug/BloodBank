@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+    <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/donor.jpg" alt="">
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="openpage"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="about"> About Us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">people</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="facts"> Facts About Blood Donation &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">menu_book</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+              <a class="nav-link" href="faq"> FAQ &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">question_answer</mat-icon></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a class="nav-link" href="contact"> Contact us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">call</mat-icon></a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item active">
+                  <a class="nav-link" href="facebook"> Share &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">share</mat-icon></a>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+            </ul>
+      </div>
+      <button mat-button [matMenuTriggerFor]="menu">Click here for Login</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a href="login">Login</a></button>
+        <button mat-menu-item><a href="adminlogin">Admin</a></button>
+      </mat-menu>    
+    </nav>
+  
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('./assets/images/bg-00.jpg');">
+
+      <mat-card class="example-card">
+          <iframe width="1000" height="315" align="middle" src="./assets/images/facts-001.jpg" frameborder="0" allowfullscreen></iframe><p>
+     <br><br>
+     <h4 style="font-family: Georgia, 'Times New Roman', Times, serif;">Facts</h4><br>
+       <p style="font-family: Georgia, 'Times New Roman', Times, serif; font-size: larger; align-self: center;">
+          Tips on blood donating<br><br>
+          1.Please have a good meal at least 3 hours before donating blood.<br>
+          2.Please accept the snacks offered after the donation. It is recommended to have a good meal later.<br>
+          3,Please avoid smoking on the day before donating. One can smoke 3 hours after donation.<br>
+          4.One is not eligible to donate blood if you have consumed alcohol 48 hours before donation.<br><br><br>
+          
+          Misconception about Donating Blood<br><br>
+          1.will not feel drained or tired if you continue to drink fluids and have a good meal.<br>
+          2.You can resume your normal activities after donating blood, though you are asked to refrain from exercise or heavy weight lifting for twelve hours after donation.<br>
+          3.Donating blood will not leave you low of blood; in fact you will still have surplus blood after the donation.<br>
+          4.While donating blood you will not feel any pain.<br>
+          5.You will not faint or feel uncomfortable after donating blood. This is a common misconception.<br>
+          6.You will not get AIDS if you donate blood.<br>
+          7.Patients are just like donors - most of them have common blood types. Because your blood type is common, the demand for that type is greater than for rare types. So, even if your blood type is common there is still a requirement.<br><br></p>   
+    </mat-card>  
+    
+
+    </div>
+</div>

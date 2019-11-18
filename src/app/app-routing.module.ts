@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { PatientListComponent } from './patientlist/patientlist.component';
 import { AuthGaurdService } from './services/auth-gaurd.service';
@@ -18,11 +17,15 @@ import { AssigndonarComponent } from './assigndonar/assigndonar.component';
 import { RequestComponent } from './request/request.component';
 import { ResetuserComponent } from './resetuser/resetuser.component';
 import { FbLikeComponent } from './fb-like/fb-like.component';
-import { TweetComponent } from './tweet/tweet.component';
+import { OpenpageComponent } from './openpage/openpage.component';
+import { AboutComponent } from './about/about.component';
+import { FactsComponent } from './facts/facts.component';
+import { FaqComponent } from './faq/faq.component';
+import { ContactComponent } from './contact/contact.component';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
-  { path: 'homepage', component: HomepageComponent },
+  { path: '', redirectTo: '/openpage', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'firstpage', component: FirstpageComponent, canActivate: [AuthGaurdService] },
   { path: 'registration', component: RegistrationComponent },
@@ -38,7 +41,11 @@ const routes: Routes = [
   { path: 'assigndonar', component: AssigndonarComponent, canActivate: [AuthAdmin] },
   { path: 'request', component: RequestComponent, canActivate: [AuthGaurdService] },
   { path: 'facebook', component: FbLikeComponent },
-  { path: 'twitter', component: TweetComponent }
+  { path: 'openpage', component: OpenpageComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'facts', component: FactsComponent },
+  { path: 'faq', component: FaqComponent },
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({

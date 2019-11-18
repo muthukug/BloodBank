@@ -1,57 +1,108 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+  <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+  <a class="navbar-brand" href="mainadmin">
+      <img src="./assets/images/donor.jpg" alt="">
+    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="mainadmin"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item active">
+          <a class="nav-link" href="patientlist"> Patient Lists &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">add_circle_outline</mat-icon></a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item active">
+          <a class="nav-link" href="donarmanagement"> Donor Management &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">find_in_page</mat-icon></a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </ul>
+    </div>
+    <button mat-button [matMenuTriggerFor]="menu">Click here for Logout</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item><a href="logout">Logout</a></button>
+    </mat-menu>    
+  </nav>
+
 <div class="limiter">
-  <div class="container-login100" style="background-image: url('./assets/images/bg-103.jpg');">
+  <div class="container-login100" style="background-image: url('./assets/images/bg-101.jpg');">
     <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-      <form class="login100-form validate-form" (ngSubmit)="onSubmit(register)" #register="ngForm">
 
-        <span class="login100-form-title p-b-49">
-          Registration
-        </span>
+      <mat-label style="font-family: 'Times New Roman', Times, serif;text-align: center;font-size: x-large;">Registration</mat-label>
+      <form class="example-form" (ngSubmit)="onSubmit(register)" #register="ngForm" >
+        <mat-vertical-stepper #linearVerticalStepper="matVerticalStepper" [linear]="false">
+          <mat-step >
+            <ng-template matStepLabel>Fill out your name</ng-template>
+            <mat-form-field class="example-full-width">
+              <input matInput type="text" placeholder="Type your Name" id="Name" name="Name" #name="ngModel"
+              [(ngModel)]="patient.name" required pattern="[a-zA-Z]{3,}">
+              <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is Required :: Only Alphabates
+                  Allowed</div> 
+            </mat-form-field>
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+              </div>
+          </mat-step>
 
-        <div class="wrap-input100 validate-input m-b-23" data-validate="Name is required">
-          <span class="label-input100">Name</span>
-          <input class="input100" type="text" placeholder="Type your Name" id="Name" name="Name" #name="ngModel"
-            [(ngModel)]="patient.name" required pattern="[a-zA-Z]{3,}">
-          <span class="focus-input100" data-symbol="&#xf206;"></span>
-          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Name is Required :: Only Alphabates
-            Allowed </div>
-        </div>
-
-        <div class="wrap-input100 validate-input m-b-23" data-validate="Location is required">
-          <span class="label-input100">Location</span>
-          <input class="input100" type="text" placeholder="Type your Location" id="location" name="location"
-            #location="ngModel" [(ngModel)]="patient.location" required pattern="[a-zA-Z ]{3,}">
-          <span class="focus-input100" data-symbol="&#xf206;"></span>
-          <div [hidden]="location.valid || location.pristine" class="alert alert-danger">Location is Required :: Only
-            Alphabates Allowed </div>
-        </div>
-
-        <div class="wrap-input100 validate-input m-b-23" data-validate="BloodGroup is required">
-          <span class="label-input100">Blood Group</span>
-          <input class="input100" type="text" placeholder="Type your Blood Group" id="bloodGroup" name="bloodGroup"
-            #bloodGroup="ngModel" [(ngModel)]="patient.bloodGroup" required pattern="[a-zA-Z0-9._%+-]{1,}">
-          <span class="focus-input100" data-symbol="&#xf206;"></span>
-          <div [hidden]="bloodGroup.valid || bloodGroup.pristine" class="alert alert-danger">Blood Group is Required ::
-            Format - O+ve </div>
-        </div>
-
-
-        <div class="wrap-input100 validate-input m-b-23" data-validate="Mobile Number is required">
-          <span class="label-input100">Mobile Number</span>
-          <input type="text" class="input100" placeholder="Type your Mobile Number" id="phoneNo" name="phoneNo"
-            #phoneNo="ngModel" [(ngModel)]="patient.phoneNo" required pattern="[6789][0-9]{9}">
-          <span class="focus-input100" data-symbol="&#xf206;"></span>
-          <div [hidden]="phoneNo.valid || phoneNo.pristine" class="alert alert-danger">Enter Valid Mobile Number </div>
-        </div>
-
-        <div class="container-login100-form-btn">
-          <div class="wrap-login100-form-btn">
-            <div class="login100-form-bgbtn"></div>
-            <button type="submit" [disabled]=!register.valid class="login100-form-btn">
-              Register
-            </button>
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Location</ng-template>
+                    <mat-form-field>
+                     <mat-select required #location="ngModel" id="location" name="location" [(ngModel)]="patient.location" placeholder="Please Choose The Location">
+                    <mat-option value="Marathahalli">Marathahalli</mat-option>
+                    <mat-option value="ElectronicCity">Electronic City</mat-option>
+                    <mat-option value="BigBazzar">BigBazzar</mat-option>
+                    </mat-select> 
+                    </mat-form-field>
+            <div>
+                <button mat-button matStepperNext type="button" >Next</button>
+                <button mat-button matStepperPrevious type="button">Back</button>
           </div>
-        </div>
+          </mat-step>
+      
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Blood Group</ng-template>
+            <mat-form-field>
+              <mat-select required placeholder="Select your Blood Group" id="bloodGroup" name="bloodGroup"
+              #bloodGroup="ngModel" [(ngModel)]="patient.bloodGroup">
+             <mat-option value="O+ve">O+ve</mat-option>
+             <mat-option value="B+ve">B+ve</mat-option>
+             <mat-option value="AB+ve">AB+ve</mat-option>
+             <mat-option value="B-ve">B-ve</mat-option>
+             <mat-option value="O-ve">O-ve</mat-option>
+             </mat-select> 
+             </mat-form-field>
+
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
+          </div>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Fill out your Mobile Number</ng-template>
+            <mat-form-field>
+              <input matInput  type="text" placeholder="Type your Mobile Number" id="phoneNo" name="phoneNo"
+          #phoneNo="ngModel" [(ngModel)]="patient.phoneNo" required pattern="[6789][0-9]{9}">
+          <div [hidden]="phoneNo.valid || phoneNo.pristine" class="alert alert-danger">Enter Valid Mobile Number</div>
+
+            </mat-form-field>
+            
+            <div>
+                <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperPrevious type="button">Back</button>
+          </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Confirm your information</ng-template>
+            Everything seems correct.
+            <div>
+              <button mat-button type="submit" [disabled]=!register.valid>Done</button>
+            </div>
+          </mat-step> 
+        </mat-vertical-stepper>
       </form>
+      <br>
+      <button mat-stroked-button><a href="patientlist">Back</a></button>
+
+
     </div>
   </div>
 </div>

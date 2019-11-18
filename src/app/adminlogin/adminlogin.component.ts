@@ -16,7 +16,7 @@ export class AdminloginComponent implements OnInit {
     this.login = new Login();
   }
 
-  login: Login;
+  login: Login = new Login();
 
 
   username = ''

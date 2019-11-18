@@ -1,0 +1,125 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+    <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+    <a class="navbar-brand" href="#">
+        <img src="./assets/images/donor.jpg" alt="">
+      </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="openpage"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="about"> About Us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">people</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+            <a class="nav-link" href="facts"> Facts About Blood Donation &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">menu_book</mat-icon></a>
+          </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <li class="nav-item active">
+              <a class="nav-link" href="faq"> FAQ &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">question_answer</mat-icon></a>
+            </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <li class="nav-item active">
+                <a class="nav-link" href="contact"> Contact us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">call</mat-icon></a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item active">
+                  <a class="nav-link" href="facebook"> Share &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">share</mat-icon></a>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+            </ul>
+      </div>
+      <button mat-button [matMenuTriggerFor]="menu">Click here for Login</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a href="login">Login</a></button>
+        <button mat-menu-item><a href="adminlogin">Admin</a></button>
+      </mat-menu>    
+    </nav>
+  
+
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('./assets/images/bg-00.jpg');">
+
+      <mat-card class="example-card">
+
+          <iframe width="1000" height="315" align="middle" src="./assets/images/faq-001.jpg" frameborder="0" allowfullscreen></iframe><p>
+              <br><br>
+
+              <h4 style="font-family: Georgia, 'Times New Roman', Times, serif;">Frequently Asked Questions</h4><br>
+         
+      <mat-accordion>
+
+          <mat-expansion-panel class="hello">
+              <mat-expansion-panel-header>
+                    <mat-panel-title>
+                   Question 1 : 
+                    </mat-panel-title>
+                            <mat-panel-description>
+                           Will donating blood hurt?
+                            </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p style="font-family: Georgia, 'Times New Roman', Times, serif;">You might feel a slight sting in the beginning lasting only a couple of seconds, but there should be no discomfort during the donation.</p>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                        <mat-panel-title>
+                       Question 2 : 
+                        </mat-panel-title>
+                                <mat-panel-description>
+                                    How will I feel after I donate?
+                                </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Most people tolerate blood donation very well. However, some people experience fatigue. You should discuss your concerns before and after donation with a staff member at the blood donor center or blood drive. They can offer recommendations regarding strenuous exercise and other physical activity following donation</mat-expansion-panel>
+                  <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                            <mat-panel-title>
+                           Question 3 : 
+                            </mat-panel-title>
+                                    <mat-panel-description>
+                                        How long will the actual donation process take?
+                                    </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <p style="font-family: Georgia, 'Times New Roman', Times, serif;">The entire donation process, from registration to post-donation refreshments, takes about one hour. The actual donation takes about 5-10 minutes.</mat-expansion-panel>
+                      <mat-expansion-panel>
+                          <mat-expansion-panel-header>
+                                <mat-panel-title>
+                               Question 4 : 
+                                </mat-panel-title>
+                                        <mat-panel-description>
+                                            How much blood is taken?
+                                        </mat-panel-description>
+                          </mat-expansion-panel-header>
+                          <p style="font-family: Georgia, 'Times New Roman', Times, serif;">For a whole blood donation, approximately 500 ml or one-half liter of blood is collected. For donations of other blood products, such as platelet or plasma, the amount collected depends on your height, weight and platelet count.
+                          </mat-expansion-panel>
+                          <mat-expansion-panel>
+                              <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                   Question 5 : 
+                                    </mat-panel-title>
+                                            <mat-panel-description>
+                                                If I just received a flu shot, can I donate blood?
+                                            </mat-panel-description>
+                              </mat-expansion-panel-header>
+                              <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Yes. There is no waiting period to donate after receiving a flu shot.</mat-expansion-panel>
+                              <mat-expansion-panel>
+                                  <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                       Question 6 : 
+                                        </mat-panel-title>
+                                                <mat-panel-description>
+                                                    If I have a cold or the flu, can I donate blood?
+                                                </mat-panel-description>
+                                  </mat-expansion-panel-header>
+                                  <p style="font-family: Georgia, 'Times New Roman', Times, serif;">No, blood blood centers require that you be in good health (symptom-free) and feeling well.</mat-expansion-panel>
+                                  <mat-expansion-panel>
+                                      <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                           Question 7 : 
+                                            </mat-panel-title>
+                                                    <mat-panel-description>
+                                                        Can I still donate if I have high blood pressure?
+                                                    </mat-panel-description>
+                                      </mat-expansion-panel-header>
+                                      <p style="font-family: Georgia, 'Times New Roman', Times, serif;">Yes, if your blood pressure falls within the limits set by FDA regulations.</mat-expansion-panel>
+        </mat-accordion>
+      </mat-card>
+    </div>
+</div>

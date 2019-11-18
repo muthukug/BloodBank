@@ -1,31 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Administrator</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+  <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+  <a class="navbar-brand" href="mainadmin">
+      <img src="./assets/images/donor.jpg" alt="">
+    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="mainadmin"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item active">
+          <a class="nav-link" href="patientlist"> Patient Lists &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">add_circle_outline</mat-icon></a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item active">
+          <a class="nav-link" href="donarmanagement"> Donor Management &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">find_in_page</mat-icon></a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </ul>
+    </div>
+    <button mat-button [matMenuTriggerFor]="menu">Click here for Logout</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item><a href="logout">Logout</a></button>
+    </mat-menu>    
+  </nav>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="mainpage">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="logout">Logout</a>
-      </li>
-    </ul>
-  </div>
-</nav>
 
 <!-- ---------------------------------------------------------------
 --------------------------------------------------------------- -->
 
-<div class="limiter">
-  <div class="container-login100" style="background-image: url('./assets/images/bg-103.jpg');">
-
-
     <div class="limiter">
-      <div class="container-login100" style="background-image: url('./assets/images/bg-103.jpg');">
+      <div class="container-login100" style="background-image: url('./assets/images/bg-101.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
           <div>
             <div style="text-align: center;">
@@ -78,7 +80,7 @@
                   </table>
                   <br>
                   <br>
-                  <button type="button" type="submit" [disabled]=!confirm.valid class="btn btn-info">Confirm</button>
+                  <button type="button" type="submit" [disabled]=!confirm.valid mat-stroked-button>Confirm</button>
                   <button class="login100-form-btn"><a routerLink="/mainadmin">Back</a></button>
 
                   <br>
@@ -88,5 +90,5 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
+ </div>
+ </div>

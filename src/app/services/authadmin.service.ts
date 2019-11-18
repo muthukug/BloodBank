@@ -14,7 +14,7 @@ export class AuthAdmin implements CanActivate {
     if (this.authService.isAdminValid())
       return true;
     else {
-      this.router.navigate(['homepage']);
+      this.router.navigate(['openpage']);
       return false;
     }
   }

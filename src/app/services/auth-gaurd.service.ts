@@ -14,7 +14,7 @@ export class AuthGaurdService implements CanActivate {
     if (this.authService.isUserValid())
       return true;
     else {
-      this.router.navigate(['homepage']);
+      this.router.navigate(['openpage']);
       return false;
     }
   }

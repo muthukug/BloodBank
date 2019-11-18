@@ -26,7 +26,7 @@ export class ResetComponent implements OnInit {
     this.phone = (<HTMLInputElement>document.getElementById('phoneNo')).value;
     this.pwd = (<HTMLInputElement>document.getElementById('password')).value;
     this.regService.edit(this.phone, this.pwd).subscribe((data: boolean) => {
-      this.router.navigate(['/homepage'])
+      this.router.navigate(['/adminlogin'])
       alert(JSON.stringify("Password Sucessfully changed"))
     });
     this.registration = new Registration();

@@ -42,7 +42,8 @@ donor:DoanrDetails[]=[]
   deleteDonar(donarId) {
     if (confirm("Are you sure to delete ")) {
       console.log(this.regService.deleteDonar(donarId).subscribe(),
-        this.don = this.regService.getAllDonar()
+        this.don = this.regService.getAllDonar(),
+        window.location.reload()
       );
     }
   }

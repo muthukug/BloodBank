@@ -20,3 +20,11 @@ h3
     font-family: "Times New Roman", Times, serif;
     font-style: italic; 
 }
+.example-class
+{
+    text-align: center;
+}
+.wrap-login100
+{
+    background-color: burlywood;
+}

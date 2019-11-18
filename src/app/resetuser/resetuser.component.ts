@@ -23,7 +23,7 @@ export class ResetuserComponent implements OnInit {
     this.phone = (<HTMLInputElement>document.getElementById('phoneNo')).value;
     this.pwd = (<HTMLInputElement>document.getElementById('password')).value;
     this.regService.updateUserPassword(this.phone, this.pwd).subscribe((data: boolean) => {
-      this.router.navigate(['/homepage'])
+      this.router.navigate(['/login'])
       alert(JSON.stringify("Password Sucessfully changed"))
     });
     this.registration = new Registration();

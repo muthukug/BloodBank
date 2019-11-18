@@ -1,4 +1,54 @@
-<fb-like></fb-like>
-<fb-like url={{url}}></fb-like>
 
-<fb-like url="http://bloodbank.com" text="bloodbank"></fb-like>
+
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: burlywood;">
+        <label style="font-family: 'Times New Roman', Times, serif;"><b>Infinite blood, Inc.</b></label> 
+        <a class="navbar-brand" href="#">
+            <img src="./assets/images/donor.jpg" alt="">
+          </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="openpage"> Home &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon> <span class="sr-only">(current)</span></a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item active">
+                <a class="nav-link" href="about"> About Us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">people</mat-icon></a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item active">
+                <a class="nav-link" href="facts"> Facts About Blood Donation &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">menu_book</mat-icon></a>
+              </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <li class="nav-item active">
+                  <a class="nav-link" href="faq"> FAQ &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">question_answer</mat-icon></a>
+                </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact"> Contact us &nbsp;<mat-icon aria-hidden="false" aria-label="Example home icon">call</mat-icon></a>
+                  </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </ul>
+          </div>
+          <button mat-button [matMenuTriggerFor]="menu">Click here for Login</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item><a href="login">Login</a></button>
+            <button mat-menu-item><a href="adminlogin">Admin</a></button>
+          </mat-menu>    
+        </nav>
+      
+    
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('./assets/images/bg-00.jpg');">
+    
+    <mat-card>    
+         
+            <h4 style="font-family: Georgia, 'Times New Roman', Times, serif;">Tell Your Friends About Us</h4><br>
+         
+            <iframe width="275" height="275" align="middle" src="./assets/images/share.jpg" frameborder="0" allowfullscreen></iframe><p>
+                    <br><br>
+
+             <label style="font-family: 'Times New Roman', Times, serif;font-size: x-large;"><b>Facebook</b></label>&nbsp;&nbsp;&nbsp;
+            <a href="https://facebook.com/share" [attr.data-text]="text" [attr.data-url]="url" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></a>
+            <br><br><br>
+            <label style="font-family: 'Times New Roman', Times, serif;font-size: x-large;"><b>Twitter</b></label>&nbsp;&nbsp;&nbsp;
+            <a href="https://twitter.com/share" [attr.data-text]="text" [attr.data-url]="url" class="twitter-share-button"></a>
+
+        </mat-card>
+    
+        </div>
+    </div>

@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { PatientListComponent } from './patientlist/patientlist.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,7 +24,12 @@ import { ResetuserComponent } from './resetuser/resetuser.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material';
 import { FbLikeComponent } from './fb-like/fb-like.component';
-import { TweetComponent } from './tweet/tweet.component';
+import { OpenpageComponent } from './openpage/openpage.component';
+import { FactsComponent } from './facts/facts.component';
+import { FaqComponent } from './faq/faq.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+
 
 
 @NgModule({
@@ -34,7 +38,6 @@ import { TweetComponent } from './tweet/tweet.component';
     LoginComponent,
     FirstpageComponent,
     RegistrationComponent,
-    HomepageComponent,
     PatientListComponent,
     AdminloginComponent,
     ResetComponent,
@@ -47,7 +50,11 @@ import { TweetComponent } from './tweet/tweet.component';
     RequestComponent,
     ResetuserComponent,
     FbLikeComponent,
-    TweetComponent
+    OpenpageComponent,
+    FactsComponent,
+    FaqComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

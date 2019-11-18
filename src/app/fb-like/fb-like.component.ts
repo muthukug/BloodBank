@@ -2,11 +2,13 @@ import { Component, ElementRef, AfterViewInit, Input } from '@angular/core';
 
 @Component({
     selector: 'fb-like',
-    template: `<a href="https://facebook.com/share" [attr.data-text]="text" [attr.data-url]="url" class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></a>`
+    templateUrl: './fb-like.component.html',
+  styleUrls: ['./fb-like.component.css']
 })
 
 export class FbLikeComponent implements AfterViewInit {
     @Input() url = location.href;
+    
 
     constructor() {
         // initialise facebook sdk after it loads if required
@@ -28,10 +30,19 @@ export class FbLikeComponent implements AfterViewInit {
             script.src = url;
             document.body.appendChild(script);
         }
+
+        const url1 = 'https://platform.twitter.com/widgets.js';
+        if (!document.querySelector(`script[src='${url1}']`)) {
+            let script = document.createElement('script');
+            script.src = url1;
+            document.body.appendChild(script);
+        }
     }
 
     ngAfterViewInit(): void {
         // render facebook button
         window['FB'] && window['FB'].XFBML.parse();
+    
+        window['twttr'] && window['twttr'].widgets.load();
     }
 }
