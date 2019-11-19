@@ -42,7 +42,7 @@
 						<ng-template >Mobile Number</ng-template>
 					<input class="input100" matInput type="text" name="username" placeholder="Type your username" id="username"
 					#username ="ngModel" [(ngModel)]="login.username" required pattern="[6789][0-9]{9}">
-						<div [hidden]="username.valid || username.pristine" class="alert alert-danger">Enter Valid Mobile Number</div> 
+						<div [hidden]="username.valid || username.pristine" class="alert alert-danger">Enter Valid Mobile Number :: Number from 0-9 and Should be 10 digits</div> 
 				
 			</mat-form-field><br><br>
 				<mat-form-field class="example-full-width">

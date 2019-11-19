@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { RegisterService } from '../services/register.service';
 import { Donar } from '../Model/donar';
 import { MatTableDataSource, MatPaginator, MatSort } from '@angular/material';
+import { Registration } from '../Model/Registration';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-firstpage',
@@ -15,13 +17,15 @@ export class FirstpageComponent implements OnInit {
   donars: Donar
   user:any
   pats:any
+  
   constructor(private router: Router, private regService: RegisterService) { }
 
   ngOnInit() {
     this.getPatient()
     this.regService.getName().subscribe(data=>this.user=data);
-    
   }
+
+
 
   doFilter = (value: string) => {
     this.pats.filter = value.trim().toLocaleLowerCase();
@@ -38,7 +42,6 @@ export class FirstpageComponent implements OnInit {
       this.pats = new MatTableDataSource(this.donarList);
       this.pats.paginator = this.paginator;
       this.pats.sort = this.sort;
-      console.log(this.donarList);
     });
   }
 

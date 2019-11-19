@@ -18,10 +18,11 @@ export class RegisterService {
   location: any;
   get: any;
   donars: Donar
+  editor:Registration
   donardetails: DoanrDetails
   uName: String;
   useName: String;
-  usName:String
+  usName:String;
   names:String;
 
   constructor(private http: HttpClient) { }
@@ -84,6 +85,7 @@ export class RegisterService {
     this.donars = donars;
   }
 
+
   SetDonarDetails(donardetails: DoanrDetails) {
     this.donardetails = donardetails;
   }
@@ -141,7 +143,5 @@ export class RegisterService {
   updateUserPassword(phoneNo, password): Observable<any> {
     return this.http.get(`${this.baseUrl}` + `/updateUserPassword/${phoneNo}/${password}`);
   }
-
-
 
 }

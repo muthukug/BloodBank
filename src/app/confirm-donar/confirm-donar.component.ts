@@ -16,12 +16,14 @@ export class ConfirmDonarComponent implements OnInit {
   userId: String;
   userName: any;
   donarId: Object;
+  user
   constructor(private regService: RegisterService, private router: Router) { }
 
   ngOnInit() {
     this.uName();
     this.getUserId();
     this.getDonarList();
+    this.regService.getName().subscribe(data=>this.user=data);
   }
   getDonarList() {
     this.donars = this.regService.getSetDonarList();
